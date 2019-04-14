@@ -22,3 +22,17 @@ def post_new(request):
     else:
         form = PostForm()
         return render(request, 'blog/new.html', {'form':form})
+def post_self_intro(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.published_date = timezone.datetime.now()
+            post.save()
+            return redirect('detail', post_id=post.pk)
+    else:
+        form = PostForm()
+        return render(request, 'blog/self_intro.html', {'form':form})
+
+       
+    

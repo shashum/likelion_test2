@@ -1,15 +1,22 @@
 <head>
-    <title> My First Blog </title>
+    <title> 장고로 만든 블로그 </title>
 </head>
 <body>
     <h1>Home</h1>
     <a href="{% url 'new'%}"class='top-menu'>글쓰기</a>
     {% for post in posts.all %}
     <div class="container">
-        <h2><a href="post/{{post.id}}/">{{post.title}}</a></h2>
-        <p>{{post.created_date}}</p>    
-        
+        <h2><a href="post/{{post.id}}/"> {{post.title}} </a></h2>
+        <p>{{post.created_date}}</p>
     </div>
-
+    {% endfor %}
+    <p>New One!</p>
+    <h2>HW</h2>
+    <a href="{% url 'self_intro'%}"class='top-menu'>노성현</a>
+    {% for post in posts.self_intro %}
+    <div class="container">
+        <h2><a href="post/{{post.id}}/"> {{post.title}} </a></h2>
+        <p>{{post.created_date}}</p>
+    </div>
     {% endfor %}
 </body>

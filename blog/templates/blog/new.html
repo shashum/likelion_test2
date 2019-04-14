@@ -1,11 +1,12 @@
 <head>
 </head>
 <body>
-    <h1>글을 작성</h1>
+    <h1>새로 작성</h1>
     <form method="POST" class="post-form">
+        
         {% csrf_token %}
-        {{ form.as_p}}
+        {{ form.as_p }}
         <button type="submit" class="brn brn-secondary">저장</button>
-        <p>hi</p>
+        
     </form>
 </body>

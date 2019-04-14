@@ -19,7 +19,8 @@ import blog.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog/home', blog.views.home, name='home'),
-    path('blog/post/<int:post_id>/', blog.views.detail, name='detail'),
-    path('blog/post/new/', blog.views.post_new, name='new'),
+    path('blog/home/', blog.views.home, name='home'),
+    path('blog/home/post/<int:post_id>/', blog.views.detail, name='detail'),
+    path('blog/home/post/new/', blog.views.post_new, name='new'),
+    path('blog/home/post/self_intro/', blog.views.post_self_intro, name='self_intro'),
 ]
