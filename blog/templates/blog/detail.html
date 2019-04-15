@@ -1,9 +1,12 @@
 <div>
     <h1 style = "color : rgb(121, 121, 27)">{{ post.title }}</h1>
     
-    <p style="color: blue">{{ post.text }}</p>
+    <p>{{ post.text }}</p>
 
     <em><p>{{ post.published_date }}</p></em>
     <a href="{% url 'home'%}">홈으로</a>
-    
+    <p></p>
+    <a href="{% url 'edit' post.id %}">수정</a>
+    <p></p>
+    <a href="{% url 'delete' post.id %}">삭제</a>
 </div>
